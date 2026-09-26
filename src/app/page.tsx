@@ -48,21 +48,9 @@ function SectionLabel({ children }: { children: React.ReactNode }) { return <spa
 function WebsitePreview() {
   return (
     <div className="hero-preview" aria-hidden="true">
-      <div className="preview-glow" />
-      <div className="browser-window">
-        <div className="browser-top"><div className="browser-dots"><i /><i /><i /></div><div className="browser-address"><span>✳</span> website preview</div><div className="browser-menu">···</div></div>
-        <div className="demo-site">
-          <div className="demo-nav"><div className="demo-brand"><span>✳</span><b>YOUR BUSINESS</b></div><div className="demo-links"><i /><i /><i /></div><div className="demo-nav-cta" /></div>
-          <div className="demo-content">
-            <div className="demo-copy"><span className="demo-kicker" /><div className="demo-heading"><i /><i /><i /></div><div className="demo-paragraph"><i /><i /><i /></div><div className="demo-action"><span /><ArrowRight size={13} /></div><div className="demo-proof"><span /><i /><i /></div></div>
-            <div className="demo-photo"><div className="demo-sun"/><div className="demo-leaf leaf-a"/><div className="demo-leaf leaf-b"/><div className="demo-table"/><div className="demo-vase"/><div className="demo-photo-stamp">Made for<br/>your business</div></div>
-          </div>
-          <div className="demo-bottom"><span /><span /><span /><span /></div>
-        </div>
+      <div className="hero-image-composition">
+        <Image className="hero-foreground-image" src="/images/hero/zeroone-foreground.png" alt="" width={1672} height={940} sizes="(max-width: 760px) 100vw, 55vw" />
       </div>
-      <div className="phone-window"><div className="phone-notch"/><div className="phone-screen"><div className="phone-head"><span>✳</span><i /></div><div className="phone-image"><div className="demo-sun"/><div className="demo-leaf leaf-a"/><div className="demo-leaf leaf-b"/></div><div className="phone-lines"><i/><i/><i/><i/></div><div className="phone-button"/></div></div>
-      <div className="preview-note"><span className="note-mark"><Check size={14}/></span><span><b>Designed around your business</b><small>Clear on every screen</small></span></div>
-      <div className="hero-index">01 <span>—</span> 04</div>
     </div>
   );
 }
@@ -83,9 +71,9 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />
-      <header className="site-header"><div className="container header-inner"><a href="#home" aria-label="Zero One home"><Logo /></a><nav className="desktop-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a></nav><a className="header-cta" href="#contact">Start a project <ArrowRight size={15}/></a><MobileNav /></div></header>
+      <header className="site-header"><div className="container header-inner"><a href="#home" aria-label="Zero One home"><Logo light /></a><nav className="desktop-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a><a href="#contact">Contact</a></nav><a className="header-cta" href="#contact">Start a Project <ArrowRight size={15}/></a><MobileNav /></div></header>
       <main id="main-content">
-        <section className="hero" id="home"><div className="hero-grid"/><div className="container hero-inner"><div className="hero-copy"><div className="hero-kicker"><span className="kicker-dot"/> WEB DESIGN & DEVELOPMENT <span className="kicker-line"/></div><h1>Websites that help local businesses <span>grow.</span></h1><p className="hero-description">Zero One designs and develops fast, modern websites that help businesses look professional, reach customers and turn visitors into enquiries.</p><div className="hero-actions"><a className="button button-primary" href="#contact">Start a project <ArrowRight size={17}/></a><a className="hero-text-link" href="#work">View our work <ArrowDownRight size={16}/></a></div><div className="hero-location"><MapPin size={15}/><span>Based in Jabalpur</span><i/> <span>Working across India & beyond</span></div></div><WebsitePreview /></div><div className="hero-bottom container"><div className="scroll-cue"><span className="scroll-cue-line"/> SCROLL TO EXPLORE</div><span className="hero-bottom-right">Thoughtful websites. Built around your business.</span></div></section>
+        <section className="hero" id="home"><Image className="hero-background-image" src="/images/hero/zeroone-background.png" alt="" width={1672} height={940} sizes="100vw"/><div className="hero-grid"/><div className="container hero-inner"><div className="hero-copy"><div className="hero-kicker"><span className="kicker-dot"/> WEB DESIGN & DEVELOPMENT <span className="kicker-line"/></div><h1>Websites that help local businesses <span>grow.</span></h1><p className="hero-description">Zero One designs and develops fast, modern websites that help businesses look professional, reach customers and turn visitors into enquiries.</p><div className="hero-actions"><a className="button button-primary" href="#contact">Start a Project <ArrowRight size={17}/></a><a className="button button-secondary hero-secondary-button" href="#work">View Our Work <ArrowRight size={16}/></a></div><div className="hero-location"><MapPin size={15}/><span>Based in Jabalpur</span><i/> <span>Working across India & beyond</span></div></div><WebsitePreview /></div><div className="hero-bottom container"><div className="scroll-cue"><span className="scroll-cue-line"/> SCROLL TO EXPLORE</div><span className="hero-bottom-right">Thoughtful websites. Built around your business.</span></div></section>
 
         <section className="categories section-pad"><div className="container"><ScrollReveal><div className="section-head split-head"><div><SectionLabel>Built for</SectionLabel><h2 className="section-title">Businesses of <span className="title-blue">all kinds.</span></h2></div><p className="section-copy">From restaurants to clinics, we build websites for local businesses across different industries.</p></div></ScrollReveal><div className="category-grid">{categories.map(({ name, icon: Icon }, i) => <ScrollReveal key={name} delay={i * 0.04}><div className="category-card"><span className="category-icon"><Icon size={19} strokeWidth={1.7}/></span><span>{name}</span><ArrowUpRight className="category-arrow" size={15}/></div></ScrollReveal>)}</div></div></section>
 
